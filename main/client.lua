@@ -21,6 +21,11 @@ awful.rules.rules = {
 			rule = { class = "Skype" },
 			properties = { tag = tags[1][2] }
 		},
+		-- Same for Steam.
+		{
+			rule = { class = "Steam" },
+			properties = { tag = tags[1][2] }
+		},
 }
 
 -- Signals
