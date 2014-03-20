@@ -33,7 +33,7 @@ AUTOSTART = {
 terminal = "sakura"
 editor = os.getenv("EDITOR") or "vim"
 filemanager = "thunar"
-browser = "luakit"
+browser = "firefox"
 -----------------------------------------------
 
 -- Handle runtime errors after startup.
