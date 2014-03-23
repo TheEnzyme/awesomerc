@@ -7,7 +7,7 @@ return {
 	bg_normal     = "#222222",
 	bg_focus      = "#444444",
 	bg_urgent     = "#ff0000",
-	bg_minimize   = "#556677",
+	bg_minimize   = "#5736c1",
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#aaaaaa",
