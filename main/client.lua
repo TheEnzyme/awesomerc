@@ -11,11 +11,6 @@ awful.rules.rules = {
 				buttons = clientbuttons
 			}
 		},
-    -- Set Qjackctl to always map on the "util" tag of screen 1.
-    {
-			rule = { class = "Qjackctl" },
-			properties = { tag = tags[1][3] }
-		},
 		 -- Set Skype to always map on the "comm" tag of screen 1.
     {
 			rule = { class = "Skype" },

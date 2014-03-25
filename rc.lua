@@ -20,13 +20,9 @@ THEME = "darkbow"
 USERTHEME = true
 
 AUTOSTART = {
-	{ "jackdbus", "/home/legospacy/scripts/jack/jack_start.sh" },
-
 	"xbindkeys",
 	"dropboxd",
-	"skype",
-
-	--"qjackctl"
+	"skype"
 }
 
 -- Default applications.
@@ -62,7 +58,7 @@ layouts = {
 -- Setup tags.
 -- Tags
 taglist = { -- List of tags. Will be added to each screen.
-	tags = { '[main]', '[comm]', '[util]' },
+	tags = { '[main]', '[comm]' },
 	layout = {layouts[2], layouts[1], layouts[1]}
 }
 
