@@ -21,6 +21,12 @@ awful.rules.rules = {
 			rule = { class = "Steam" },
 			properties = { tag = tags[1][2] }
 		},
+
+		-- Arduino IDE.
+		{
+			rule = { class = "processing-app-Base" },
+			properties = { floating = true }
+		},
 }
 
 -- Signals
