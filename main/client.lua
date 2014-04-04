@@ -16,10 +16,10 @@ awful.rules.rules = {
 			rule = { class = "Skype" },
 			properties = { tag = tags[1][2] }
 		},
-		-- Same for Steam.
+		-- Steam on "gaming" tag.
 		{
 			rule = { class = "Steam" },
-			properties = { tag = tags[1][2] }
+			properties = { tag = tags[1][3] }
 		},
 
 		-- Arduino IDE.
