@@ -58,8 +58,8 @@ layouts = {
 -- Setup tags.
 -- Tags
 taglist = { -- List of tags. Will be added to each screen.
-	tags = { '[main]', '[comm]' },
-	layout = {layouts[2], layouts[1], layouts[1]}
+	tags = { "[main]", "[comm]", "[gaming]" },
+	layout = { layouts[2], layouts[1], layouts[1] }
 }
 
 tags = {} -- All tags.
