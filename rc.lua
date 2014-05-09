@@ -32,10 +32,10 @@ browser = "firefox"
 -----------------------------------------------
 
 -- Handle runtime errors after startup.
-require('main.error_handler')
+require("main.error_handler")
 
 -- Load the theme defined near the top.
-require('main.theme')
+require("main.theme")
 
 
 -- Define avaliable layouts.
@@ -63,13 +63,13 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 modkey = "Mod4"
 
 -- Add the main wibox.
-require('main.wibox_main')
+require("main.wibox_main")
 
 -- Keyboard and mouse bindings.
-require('main.bindings')
+require("main.bindings")
 
 -- Client rules and signals.
-require('main.client')
+require("main.client")
 
 -- Autostart.
-require('main.autostart')
+require("main.autostart")
