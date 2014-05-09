@@ -43,6 +43,7 @@ require('main.theme')
 layouts = {
 	awful.layout.suit.floating,
 	awful.layout.suit.fair,
+	 awful.layout.suit.fair.horizontal,
 	awful.layout.suit.tile
 }
 
