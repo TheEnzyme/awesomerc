@@ -21,14 +21,13 @@ USERTHEME = true
 
 AUTOSTART = {
 	"xbindkeys",
-	--"dropboxd",
-	--"skype"
+	"dropboxd",
+	"skype"
 }
 
 -- Default applications.
 terminal = "sakura"
 editor = os.getenv("EDITOR") or "vim"
-filemanager = "thunar"
 browser = "firefox"
 -----------------------------------------------
 
