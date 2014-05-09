@@ -22,17 +22,13 @@ awful.rules.rules = {
 			properties = { tag = tags[1][3] }
 		},
 
-		-- Arduino IDE.
-		{
-			rule = { class = "processing-app-Base" },
-			properties = { floating = true }
-		},
-
 		-- Fix for Wine windows floating away
+		--[[
 		{
 			rule = { class = "Wine" },
 			properties = { border_width = 0, floating = true }
 		},
+		]]
 }
 
 -- Signals
