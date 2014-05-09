@@ -21,8 +21,8 @@ USERTHEME = true
 
 AUTOSTART = {
 	"xbindkeys",
-	"dropboxd",
-	"skype"
+	--"dropboxd",
+	--"skype"
 }
 
 -- Default applications.
