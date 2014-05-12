@@ -39,7 +39,7 @@ require("main.error_handler")
 require("main.theme")
 
 
--- Define avaliable layouts.
+-- Define available layouts.
 layouts = {
 	awful.layout.suit.floating,
 	awful.layout.suit.fair,
