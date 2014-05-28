@@ -29,6 +29,7 @@ AUTOSTART = {
 terminal = "sakura"
 filemanager = "sunflower"
 editor = os.getenv("EDITOR") or "vim"
+veditor = "textadept"
 browser = "firefox"
 -----------------------------------------------
 

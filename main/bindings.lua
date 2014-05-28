@@ -35,6 +35,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
 		awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(filemanager) end),
 		awful.key({ modkey, "Control" }, "Return", function () awful.util.spawn(browser) end),
+		--awful.key({ modkey, "Alt"     }, "Return", function () awful.util.spawn(veditor) end),
 
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
