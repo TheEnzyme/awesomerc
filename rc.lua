@@ -100,6 +100,10 @@ awful.rules.rules = {
 		}
 	}
 }
+
+for _, rule in ipairs(require("main.client.rules")) do
+	table.insert(awful.rules.rules, rule)
+end
 -- ================ --
 
 -- Client signals --
