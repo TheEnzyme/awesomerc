@@ -101,9 +101,7 @@ awful.rules.rules = {
 	}
 }
 
-for _, rule in ipairs(require("main.client.rules")) do
-	table.insert(awful.rules.rules, rule)
-end
+awful.util.table.join(awful.rules.rules, require("main.client.rules"))
 -- ================ --
 
 -- Client signals --
