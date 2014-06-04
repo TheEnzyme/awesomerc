@@ -74,16 +74,16 @@ for s = 1, screen.count() do
 end
 -- ================ --
 
+-- Main key/mouse bindings --
+root.keys( require("main.bindings.global.keys") )
+-- ================ --
+
 -- Set the terminal for applications that require it --
 menubar.utils.terminal = APPLICATIONS.terminal
 -- ================ --
 
 -- Main widget box --
 require("main.wibox.main")
--- ================ --
-
--- Main key/mouse bindings --
-root.keys( require("main.bindings.global.keys") )
 -- ================ --
 
 -- Client rules --
