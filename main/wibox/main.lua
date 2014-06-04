@@ -1,8 +1,9 @@
 local awful = require("awful")
+local wibox = require("wibox")
 
 local wibox_main = {}
 
-local wi_textclock = awful.widget.textclock()
+local wibox_main_textclock = awful.widget.textclock()
 
 local wibox_main_taglist = {}
 wibox_main_taglist.buttons = awful.util.table.join(
@@ -52,10 +53,10 @@ for s=1, screen.count() do
 	wibox_main_layoutbox[s] = awful.widget.layoutbox(s)
 
 	-- Taglist
-	wibox_main_taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, wi_taglist.buttons)
+	wibox_main_taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, wibox_main_taglist.buttons)
 
 	-- Tasklist
-	wibox_main_tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, wi_tasklist.buttons)
+	wibox_main_tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, wibox_main_tasklist.buttons)
 
 
 	-- The actual wibox.
@@ -84,4 +85,4 @@ for s=1, screen.count() do
 end
 
 -- Set relevant key bindings.
-awful.key( { MODKEY }, "r", function()  wi_promptbox[mouse.screen]:run()  end )
+awful.key( { MODKEY }, "r", function()  wibox_main_promptbox[mouse.screen]:run()  end )

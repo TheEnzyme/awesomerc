@@ -19,13 +19,13 @@ local gears = require("gears")
 --local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
 local THEME_PATH = string.format("themes/%s/theme.lua", "darkbow")
 
-local APPLICATIONS = {
+APPLICATIONS = {
 	terminal = "sakura",
 	veditor = "textadept",
 	webbrowser = "firefox"
 }
 
-local LAYOUTS = {
+LAYOUTS = {
 	awful.layout.suit.floating,
 	awful.layout.suit.fair,
 	awful.layout.suit.fair.horizontal,
@@ -34,7 +34,7 @@ local LAYOUTS = {
 
 local TAGLIST = {
 	tags = { "[main]", "[aux]", "[comm]", "[gaming]" },
-	layout = { layouts[2], layouts[1], layouts[1] }
+	layout = { LAYOUTS[2], LAYOUTS[1], LAYOUTS[1] }
 }
 
 MODKEY = "Mod4"
@@ -96,8 +96,8 @@ awful.rules.rules = {
 			border_width = beautiful.border_width,
 			border_color = beautiful.border_normal,
 			focus = awful.client.focus.filter,
-			keys = require("bindings.client.keys"),
-			buttons = require("bindings.client.buttons")
+			keys = require("main.bindings.client.keys"),
+			buttons = require("main.bindings.client.buttons")
 		}
 	}
 }
