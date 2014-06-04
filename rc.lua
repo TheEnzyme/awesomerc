@@ -16,8 +16,7 @@ local gears = require("gears")
 
 
 -- Various definitions --
---local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
-local THEME_PATH = string.format("themes/%s/theme.lua", "darkbow")
+local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
 
 APPLICATIONS = {
 	terminal = "sakura",
