@@ -5,8 +5,7 @@ local beautiful = require("beautiful")
 local wibox_main = {}
 
 local textclock = awful.widget.textclock()
-local awesomeicon = wibox.widget.imagebox()
-awesomeicon:set_image(beautiful.awesome_icon)
+local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
 local taglist = {}
 taglist.buttons = awful.util.table.join(
