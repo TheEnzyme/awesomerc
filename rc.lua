@@ -57,6 +57,7 @@ end)
 
 -- Set theme --
 beautiful.init(THEME_PATH)
+-- ================ --
 
 -- Put the wallpaper on all screens.
 if beautiful.wallpaper then

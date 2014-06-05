@@ -44,7 +44,7 @@ for i = 1, 9 do
 		end))
 end
 
-globalkeys =  awful.util.table.join(globalkeys,
+globalkeys = awful.util.table.join(globalkeys,
 	-- Launching applications --
 	awful.key({ MODKEY,           }, "Return", function () awful.util.spawn(APPLICATIONS.terminal) end),
 	awful.key({ MODKEY, "Shift"   }, "Return", function () awful.util.spawn(APPLICATIONS.veditor) end),
