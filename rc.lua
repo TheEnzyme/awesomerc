@@ -14,7 +14,6 @@ local gears = require("gears")
 
 -- ================ --
 
-
 -- Various definitions --
 local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
 
@@ -101,7 +100,7 @@ awful.rules.rules = {
 	}
 }
 
-awful.util.table.join(awful.rules.rules, require("main.client.rules"))
+awful.rules.rules = awful.util.table.join(awful.rules.rules, require("main.client.rules"))
 -- ================ --
 
 -- Client signals --
