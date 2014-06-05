@@ -16,13 +16,13 @@ taglist.buttons = awful.util.table.join(
 	awful.button({ }, 1, awful.tag.viewonly),
 
 	-- Mod + left click -> set this tag as the current client's only tag.
-	awful.button({ modkey }, 1, awful.client.movetotag),
+	awful.button({ MODKEY }, 1, awful.client.movetotag),
 
 	-- Right click -> toggle visibilty of this tag.
 	awful.button({ }, 3, awful.tag.viewtoggle),
 
 	-- Mod + right click -> toggle whether current client has this tag.
-	awful.button({ modkey }, 3, awful.client.toggletag)
+	awful.button({ MODKEY }, 3, awful.client.toggletag)
 
 )
 
