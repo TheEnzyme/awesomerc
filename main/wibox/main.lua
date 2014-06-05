@@ -2,6 +2,8 @@ local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+local awutil = require("lib.self.awutil")
+
 local wibox_main = {}
 
 local textclock = awful.widget.textclock()
@@ -88,6 +90,6 @@ for s=1, screen.count() do
 	wibox_main[s]:set_widget(layout)
 end
 
-root.keys( awful.util.table.join(root.keys(),
+awutil.add_global_keys{
 	awful.key( { MODKEY }, "r", function()  promptbox[mouse.screen]:run()  end)
-))
+}

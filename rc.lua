@@ -11,7 +11,7 @@ local gears = require("gears")
 -- ================ --
 
 -- Other modules --
-
+local awutil = require("lib.self.awutil")
 -- ================ --
 
 -- Various definitions --
@@ -100,7 +100,7 @@ awful.rules.rules = {
 	}
 }
 
-awful.rules.rules = awful.util.table.join(awful.rules.rules, require("main.client.rules"))
+awutil.add_client_rules( require("main.client.rules") )
 -- ================ --
 
 -- Client signals --
