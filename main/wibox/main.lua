@@ -88,8 +88,6 @@ for s=1, screen.count() do
 	wibox_main[s]:set_widget(layout)
 end
 
----[[
 root.keys( awful.util.table.join(root.keys(),
 	awful.key( { MODKEY }, "r", function()  promptbox[mouse.screen]:run()  end)
 ))
---]]
