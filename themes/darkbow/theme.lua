@@ -1,3 +1,4 @@
+local awful = require("awful")
 local themedir = awful.util.getdir("config") .. "/themes/darkbow"
 
 return {
