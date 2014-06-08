@@ -32,7 +32,7 @@ LAYOUTS = {
 
 local TAGLIST = {
 	tags = { "[main]", "[aux]", "[comm]", "[gaming]" },
-	layout = { LAYOUTS[2], LAYOUTS[2], LAYOUTS[1], LAYOUTS[1] }
+	layout = { LAYOUTS[2], LAYOUTS[2], LAYOUTS[2], LAYOUTS[2] }
 }
 
 MODKEY = "Mod4"
