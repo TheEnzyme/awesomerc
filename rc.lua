@@ -3,7 +3,6 @@ local awful = require("awful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
-awful.rules = require("awful.rules")
 require("awful.autofocus")
 
 local beautiful = require("beautiful")
@@ -87,9 +86,8 @@ require("main.wibox.main")
 -- ================ --
 
 -- Client rules --
-awful.rules.rules = {
-	-- All clients will match this rule.
-	{
+awutil.add_client_rules{
+	{ -- All clients will match this rule.
 		rule = {},
 		properties = {
 			border_width = beautiful.border_width,
