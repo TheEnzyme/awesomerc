@@ -18,7 +18,7 @@ local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("co
 
 APPLICATIONS = {
 	terminal = "sakura",
-	veditor = "textadept",
+	filemanager = "thunar",
 	webbrowser = "firefox"
 }
 
