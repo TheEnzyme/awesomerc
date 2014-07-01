@@ -1,24 +1,24 @@
 local awful = require("awful")
-local themedir = awful.util.getdir("config") .. "/themes/darkbow"
+local themedir = awful.util.getdir("config") .. "/themes/dreary_flight"
 
 return {
 
 	font          = "sans 8",
 
-	bg_normal     = "#222222",
-	bg_focus      = "#444444",
-	bg_urgent     = "#ff0000",
-	bg_minimize   = "#2B4FBA",
-	bg_systray    = bg_normal,
+	bg_normal     = "#444444",
+	bg_focus      = "#888888",
+	bg_urgent     = "#ff3333",
+	bg_minimize   = "#334455",
+	bg_systray    = "#444444",
 
-	fg_normal     = "#aaaaaa",
+	fg_normal     = "#cccccc",
 	fg_focus      = "#ffffff",
 	fg_urgent     = "#ffffff",
 	fg_minimize   = "#ffffff",
 
 	border_width  = 1,
 	border_normal = "#000000",
-	border_focus  = "#535d6c",
+	border_focus  = "#aaaaaa",
 	border_marked = "#91231c",
 
 	taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png",
@@ -28,7 +28,7 @@ return {
 	menu_height = 15,
 	menu_width  = 100,
 
-	wallpaper = themedir .. "/background.png",
+	wallpaper = themedir .. "/background.jpg",
 
 	layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png",
 	layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png",
