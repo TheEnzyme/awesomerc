@@ -6,9 +6,9 @@ return {
 	font          = "sans 8",
 
 	bg_normal     = "#444444",
-	bg_focus      = "#777777",
+	bg_focus      = "#666666",
 	bg_urgent     = "#ff3333",
-	bg_minimize   = "#334455",
+	bg_minimize   = "#555577",
 	bg_systray    = "#444444",
 
 	fg_normal     = "#cccccc",
