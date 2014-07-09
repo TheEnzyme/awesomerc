@@ -14,7 +14,7 @@ local awutil = require("lib.self.awutil")
 -- ================ --
 
 -- Various definitions --
-local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"dreary_flight")
+local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
 
 APPLICATIONS = {
 	terminal = "sakura",
