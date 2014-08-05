@@ -2,8 +2,8 @@ local awful = require("awful")
 local tags = awful.tag.gettags(1)
 
 return {
-	{ -- Clients which open on [comm] tag.
+	{ -- Applications to do with communication.
 		rule_any = { class = {"Skype", "Mumble"} },
-		properties = { tag = tags[3] }
+		properties = { tag = tags[1] }
 	}
 }
