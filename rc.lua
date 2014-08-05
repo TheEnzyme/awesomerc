@@ -29,10 +29,7 @@ LAYOUTS = {
 	awful.layout.suit.tile
 }
 
-local TAGLIST = {
-	tags = { "[main]", "[aux]", "[comm]", "[gaming]" },
-	layout = { LAYOUTS[2], LAYOUTS[2], LAYOUTS[2], LAYOUTS[2] }
-}
+local NTAGS = 5
 
 MODKEY = "Mod4"
 -- ================ --
@@ -69,7 +66,17 @@ end
 -- Setup tags --
 local tags = {}
 for s = 1, screen.count() do
-	tags[s] = awful.tag(TAGLIST.tags, s, TAGLIST.layout)
+	tags[s] = {}
+	for n = 1, NTAGS do
+		tags[s][n] = awful.tag.add(("[%d]"):format(n), {
+			screen = s,
+			layout = awful.layout.suit.fair
+		})
+
+		if n == 1 then
+			tags[s][n].selected = true
+		end
+	end
 end
 -- ================ --
 
