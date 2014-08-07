@@ -29,7 +29,7 @@ LAYOUTS = {
 	awful.layout.suit.tile
 }
 
-local NTAGS = 5
+local NTAGS = 8
 
 MODKEY = "Mod4"
 -- ================ --
