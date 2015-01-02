@@ -3,12 +3,12 @@ local themedir = awful.util.getdir("config") .. "/themes/darkbow"
 
 return {
 
-	font          = "sans 8",
+	font          = "tewi 8",
 
 	bg_normal     = "#222222",
 	bg_focus      = "#444444",
-	bg_urgent     = "#ff0000",
-	bg_minimize   = "#2B4FBA",
+	bg_urgent     = "#D64937",
+	bg_minimize   = "#0A0A0A",
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#aaaaaa",

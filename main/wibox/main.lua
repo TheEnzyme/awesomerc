@@ -1,12 +1,19 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local vicious = require("vicious")
 
 local awutil = require("lib.self.awutil")
 
 local wibox_main = {}
 
-local textclock = awful.widget.textclock()
+
+local textclock = wibox.widget.textbox()
+vicious.register(textclock, vicious.widgets.date, "%I:%M %p " , 30)
+
+local mybattery = wibox.widget.textbox() 
+vicious.register(mybattery, vicious.widgets.bat, " Battery: $2% ", 30, "BAT1")
+
 local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
 local taglist = {}
@@ -69,7 +76,6 @@ for s=1, screen.count() do
 
 	-- Widgets aligned to the left of the wibox.
 	local left_layout = wibox.layout.fixed.horizontal()
-	left_layout:add(awesomeicon)
 	left_layout:add(taglist[s])
 	left_layout:add(promptbox[s])
 
@@ -78,8 +84,10 @@ for s=1, screen.count() do
 	if s == 1 then
 		right_layout:add(wibox.widget.systray()) -- Add systray only to screen 1.
 	end
+	right_layout:add(mybattery)
 	right_layout:add(textclock)
 	right_layout:add(layoutbox[s])
+	
 
 	-- Put it all together.
 	local layout = wibox.layout.align.horizontal()

@@ -18,7 +18,7 @@ local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("co
 
 APPLICATIONS = {
 	terminal = "sakura",
-	veditor = "textadept",
+	veditor = "beaver",
 	webbrowser = "firefox"
 }
 
@@ -26,10 +26,11 @@ LAYOUTS = {
 	awful.layout.suit.floating,
 	awful.layout.suit.fair,
 	awful.layout.suit.fair.horizontal,
-	awful.layout.suit.tile
+	awful.layout.suit.tile,
+	awful.layout.suit.tile.left
 }
 
-local NTAGS = 8
+local NTAGS = 6
 
 MODKEY = "Mod4"
 -- ================ --
@@ -67,10 +68,13 @@ end
 local tags = {}
 for s = 1, screen.count() do
 	tags[s] = {}
+	taglayout = { LAYOUTS[4], LAYOUTS[1], LAYOUTS[2], 
+				 LAYOUTS[2], LAYOUTS[2], LAYOUTS[2]
+			      }
 	for n = 1, NTAGS do
-		tags[s][n] = awful.tag.add(("[%d]"):format(n), {
+		tags[s][n] = awful.tag.add(("%d"):format(n), {
 			screen = s,
-			layout = awful.layout.suit.fair
+			layout = taglayout[n]
 		})
 
 		if n == 1 then
@@ -134,4 +138,5 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+awful.util.spawn("nm-applet")
 -- ================ --
