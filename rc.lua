@@ -14,7 +14,7 @@ local awutil = require("lib.self.awutil")
 -- ================ --
 
 -- Various definitions --
-local THEME_PATH = string.format("%s/themes/%s/theme.lua", awful.util.getdir("config"),"darkbow")
+local THEME_PATH = string.format("%s/themes/theme.lua", awful.util.getdir("config"))
 
 APPLICATIONS = {
 	terminal = "sakura",
@@ -138,5 +138,18 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-awful.util.spawn("nm-applet")
+
+function run_once(cmd)
+  findme = cmd
+  firstspace = cmd:find(" ")
+  if firstspace then
+    findme = cmd:sub(0, firstspace-1)
+  end
+  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+end
+
+run_once("nm-applet")
+run_once("skype")
+run_once("pidgin")
+run_once("auto-xflux")
 -- ================ --
