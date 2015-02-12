@@ -18,7 +18,7 @@ local THEME_PATH = string.format("%s/themes/theme.lua", awful.util.getdir("confi
 
 APPLICATIONS = {
 	terminal = "sakura",
-	veditor = "beaver",
+	veditor = "textadept",
 	webbrowser = "firefox"
 }
 
@@ -66,15 +66,13 @@ end
 
 -- Setup tags --
 local tags = {}
+names = { "COMMS", "WEB", "DEV", "ETC1", "ETC2", "ETC3" }
 for s = 1, screen.count() do
 	tags[s] = {}
-	taglayout = { LAYOUTS[4], LAYOUTS[1], LAYOUTS[2], 
-				 LAYOUTS[2], LAYOUTS[2], LAYOUTS[2]
-			      }
 	for n = 1, NTAGS do
-		tags[s][n] = awful.tag.add(("%d"):format(n), {
+		tags[s][n] = awful.tag.add(names[n], {
 			screen = s,
-			layout = taglayout[n]
+			layout = LAYOUTS[4]
 		})
 
 		if n == 1 then
@@ -148,8 +146,7 @@ function run_once(cmd)
   awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
 end
 
-run_once("nm-applet")
 run_once("skype")
 run_once("pidgin")
-run_once("auto-xflux")
+run_once("xbindkeys")
 -- ================ --

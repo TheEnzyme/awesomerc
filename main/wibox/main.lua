@@ -6,15 +6,27 @@ local vicious = require("vicious")
 local awutil = require("lib.self.awutil")
 
 local wibox_main = {}
+local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
+-- Define all the widgets
+local cpumeter = wibox.widget.textbox()
+vicious.register(cpumeter, vicious.widgets.cpu, "CPU: $1% ", 7)
+
+local rammeter = wibox.widget.textbox()
+vicious.register(rammeter, vicious.widgets.mem, "| RAM: $1% ", 13)
+
+local wifimeter = wibox.widget.textbox()
+vicious.register(wifimeter, vicious.widgets.wifi, "| WIFI: ${linp}% ", 11, "wlan0")
+
+local powermeter = wibox.widget.textbox() 
+vicious.register(powermeter, vicious.widgets.bat, "| POWER: $2%$1 ", 19, "BAT0")
+
+local volumemeter = wibox.widget.textbox()
+vicious.register(volumemeter, vicious.widgets.volume, "| VOLUME: $1% $2 ", 1, "Master")
 
 local textclock = wibox.widget.textbox()
-vicious.register(textclock, vicious.widgets.date, "%I:%M %p " , 30)
+vicious.register(textclock, vicious.widgets.date, "| %I:%M %p " , 30)
 
-local mybattery = wibox.widget.textbox() 
-vicious.register(mybattery, vicious.widgets.bat, " Battery: $2% ", 30, "BAT1")
-
-local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
 local taglist = {}
 taglist.buttons = awful.util.table.join(
@@ -34,25 +46,11 @@ taglist.buttons = awful.util.table.join(
 )
 
 local tasklist = {}
-tasklist.buttons = awful.util.table.join(
-	-- Left click
-	awful.button({ }, 1, function(c)
-		if c == client.focus then
-			c.minimized = true
-		else
-			c.minimized = false -- Needed for :isvisible() to make sense.
-			if not c:isvisible() then
-				awful.tag.viewonly(c:tags()[1])
-			end
-			-- Un-minimise client if needed.
-			client.focus = c
-			c:raise()
-		end
-	end)
-)
-
 local promptbox = {}
 local layoutbox = {}
+
+local padding = wibox.widget.textbox()
+padding:set_text(" ")
 
 -- Adding the widgets.
 for s=1, screen.count() do
@@ -67,25 +65,31 @@ for s=1, screen.count() do
 	taglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, taglist.buttons)
 
 	-- Tasklist
-	tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, tasklist.buttons)
+	tasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.focused)
 
 
 	-- The actual wibox.
-	wibox_main[s] = awful.wibox{ position = "top", screen = s }
+	wibox_main[s] = awful.wibox{ position = "top", height = '25', screen = s }
 
 
 	-- Widgets aligned to the left of the wibox.
 	local left_layout = wibox.layout.fixed.horizontal()
 	left_layout:add(taglist[s])
 	left_layout:add(promptbox[s])
+  left_layout:add(padding)
 
 	-- Widgets aligned to the right.
 	local right_layout = wibox.layout.fixed.horizontal()
-	if s == 1 then
+  right_layout:add(cpumeter)
+  right_layout:add(rammeter)
+  right_layout:add(wifimeter)
+  right_layout:add(volumemeter)
+  right_layout:add(powermeter)
+	right_layout:add(textclock)
+  if s == 1 then
 		right_layout:add(wibox.widget.systray()) -- Add systray only to screen 1.
 	end
-	right_layout:add(mybattery)
-	right_layout:add(textclock)
+  right_layout:add(padding)
 	right_layout:add(layoutbox[s])
 	
 
