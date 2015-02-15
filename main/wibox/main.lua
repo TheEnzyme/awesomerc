@@ -19,13 +19,13 @@ local wifimeter = wibox.widget.textbox()
 vicious.register(wifimeter, vicious.widgets.wifi, "| WIFI: ${linp}% ", 11, "wlan0")
 
 local powermeter = wibox.widget.textbox() 
-vicious.register(powermeter, vicious.widgets.bat, "| POWER: $2%$1 ", 19, "BAT0")
+vicious.register(powermeter, vicious.widgets.bat, "| POWER: $2%$1 ", 43, "BAT0")
 
 local volumemeter = wibox.widget.textbox()
 vicious.register(volumemeter, vicious.widgets.volume, "| VOLUME: $1% $2 ", 1, "Master")
 
 local textclock = wibox.widget.textbox()
-vicious.register(textclock, vicious.widgets.date, "| %I:%M %p " , 30)
+vicious.register(textclock, vicious.widgets.date, "| %I:%M %p " , 47)
 
 
 local taglist = {}
@@ -56,7 +56,7 @@ padding:set_text(" ")
 for s=1, screen.count() do
 
 	-- Create a promptbox for each screen.
-	promptbox[s] = awful.widget.prompt()
+	promptbox[s] = awful.widget.prompt{prompt = "RUN: "}
 
 	-- Create a layoutbox for each screen (shows the current layout).
 	layoutbox[s] = awful.widget.layoutbox(s)
@@ -75,6 +75,7 @@ for s=1, screen.count() do
 	-- Widgets aligned to the left of the wibox.
 	local left_layout = wibox.layout.fixed.horizontal()
 	left_layout:add(taglist[s])
+  left_layout:add(padding)
 	left_layout:add(promptbox[s])
   left_layout:add(padding)
 
