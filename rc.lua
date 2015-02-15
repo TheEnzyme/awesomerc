@@ -19,7 +19,8 @@ local THEME_PATH = string.format("%s/themes/theme.lua", awful.util.getdir("confi
 APPLICATIONS = {
 	terminal = "sakura",
 	veditor = "textadept",
-	webbrowser = "firefox"
+	webbrowser = "firefox",
+  filebrowser = "thunar"
 }
 
 LAYOUTS = {
@@ -66,7 +67,7 @@ end
 
 -- Setup tags --
 local tags = {}
-names = { "COMMS", "WEB", "DEV", "ETC1", "ETC2", "ETC3" }
+names = { "COMMS", "WEB", "DEV", "WORK", "ETC1", "ETC2" }
 for s = 1, screen.count() do
 	tags[s] = {}
 	for n = 1, NTAGS do
@@ -148,5 +149,6 @@ end
 
 run_once("skype")
 run_once("pidgin")
+run_once("firefox")
 run_once("xbindkeys")
 -- ================ --

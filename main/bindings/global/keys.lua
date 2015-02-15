@@ -49,6 +49,7 @@ globalkeys = awful.util.table.join(globalkeys,
 	awful.key({ MODKEY,           }, "Return", function () awful.util.spawn(APPLICATIONS.terminal) end),
 	awful.key({ MODKEY, "Shift"   }, "Return", function () awful.util.spawn(APPLICATIONS.veditor) end),
 	awful.key({ MODKEY, "Control" }, "Return", function () awful.util.spawn(APPLICATIONS.webbrowser) end),
+  awful.key({ MODKEY, "Mod1"     }, "Return", function () awful.util.spawn(APPLICATIONS.filebrowser) end),
 	-- ================ --
 
 	awful.key({ MODKEY,           }, "Left",   awful.tag.viewprev       ),
