@@ -19,10 +19,10 @@ local wifimeter = wibox.widget.textbox()
 vicious.register(wifimeter, vicious.widgets.wifi, "| WIFI: ${linp}% ", 11, "wlan0")
 
 local powermeter = wibox.widget.textbox() 
-vicious.register(powermeter, vicious.widgets.bat, "| POWER: $2%$1 ", 43, "BAT0")
+vicious.register(powermeter, vicious.widgets.bat, "| BAT: $2%$1 ", 43, "BAT0")
 
 local volumemeter = wibox.widget.textbox()
-vicious.register(volumemeter, vicious.widgets.volume, "| VOLUME: $1% $2 ", 1, "Master")
+vicious.register(volumemeter, vicious.widgets.volume, "| VOL: $1% $2 ", 1, "Master")
 
 local textclock = wibox.widget.textbox()
 vicious.register(textclock, vicious.widgets.date, "| %I:%M %p " , 47)

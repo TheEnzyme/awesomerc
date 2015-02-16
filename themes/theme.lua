@@ -13,7 +13,7 @@ return {
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#dedede",
-	fg_focus      = "#D64937",
+	fg_focus      = "#d64937",
 	fg_urgent     = "#f9f9f9",
 	fg_minimize   = "#ffffff",
 
