@@ -10,13 +10,13 @@ local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
 -- Define all the widgets
 local cpumeter = wibox.widget.textbox()
-vicious.register(cpumeter, vicious.widgets.cpu, "CPU: $1% ", 7)
+vicious.register(cpumeter, vicious.widgets.cpu, "| CPU: $1% ", 7)
 
 local rammeter = wibox.widget.textbox()
 vicious.register(rammeter, vicious.widgets.mem, "| RAM: $1% ", 13)
 
 local wifimeter = wibox.widget.textbox()
-vicious.register(wifimeter, vicious.widgets.wifi, "| WIFI: ${linp}% ", 11, "wlan0")
+vicious.register(wifimeter, vicious.widgets.wifi, "SSID: ${ssid} | WIFI: ${linp}% ", 11, "wlan0")
 
 local powermeter = wibox.widget.textbox() 
 vicious.register(powermeter, vicious.widgets.bat, "| BAT: $2%$1 ", 43, "BAT0")
@@ -81,9 +81,9 @@ for s=1, screen.count() do
 
 	-- Widgets aligned to the right.
 	local right_layout = wibox.layout.fixed.horizontal()
+    right_layout:add(wifimeter)
   right_layout:add(cpumeter)
   right_layout:add(rammeter)
-  right_layout:add(wifimeter)
   right_layout:add(volumemeter)
   right_layout:add(powermeter)
 	right_layout:add(textclock)

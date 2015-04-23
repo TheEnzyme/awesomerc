@@ -4,20 +4,19 @@ local themedir = awful.util.getdir("config") .. "/themes"
 return {
 
 	font          = "terminus 10",
-
 	bg_normal     = "#2d2d2d",
-	--bg_focus      = "#333333",
-	bg_focus      = "#2d2d2d",  
+	--bg_focus    = "#333333",
+	bg_focus      = "#2d2d2d",
 	bg_urgent     = "#d64937",
 	bg_minimize   = "#0A0A0A",
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#dedede",
-	fg_focus      = "#d64937",
+	fg_focus      = "#d64937",  
 	fg_urgent     = "#f9f9f9",
 	fg_minimize   = "#ffffff",
 
-	border_width  = 2,
+	border_width  = 1,
 	border_normal = "#2d2d2d",
 	border_focus  = "#333333",
 	border_marked = "#91231c",
@@ -26,8 +25,8 @@ return {
 	--taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png",
 
 	tasklist_bg_focus = "#2d2d2d",
-  tasklist_fg_focus = "#dedede",
-  --tasklist_font = "terminus 11",
+	tasklist_fg_focus = "#dedede",
+	--tasklist_font = "terminus 11",
 
 	menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png",
 	menu_height = 15,

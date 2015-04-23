@@ -8,6 +8,7 @@ return {
       
     rule_any = { class = {"Firefox"} },
       properties = { tag = tags[2] }
+
       
 	}
 }

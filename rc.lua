@@ -17,10 +17,10 @@ local awutil = require("lib.self.awutil")
 local THEME_PATH = string.format("%s/themes/theme.lua", awful.util.getdir("config"))
 
 APPLICATIONS = {
-	terminal = "sakura",
+	terminal = "termite -e fish",
 	veditor = "textadept",
 	webbrowser = "firefox",
-  filebrowser = "thunar"
+	filebrowser = "thunar"
 }
 
 LAYOUTS = {
@@ -67,7 +67,7 @@ end
 
 -- Setup tags --
 local tags = {}
-names = { "COMMS", "WEB", "DEV", "WORK", "ETC1", "ETC2" }
+names = { "COMMS", "WEB", "AUX", "DEV",  "WORK", "ETC" }
 for s = 1, screen.count() do
 	tags[s] = {}
 	for n = 1, NTAGS do
@@ -148,7 +148,6 @@ function run_once(cmd)
 end
 
 run_once("skype")
-run_once("pidgin")
+run_once("termite -e \"tmux -2 a -t comms\"")
 run_once("firefox")
-run_once("xbindkeys")
 -- ================ --
