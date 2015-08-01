@@ -49,12 +49,20 @@ globalkeys = awful.util.table.join(globalkeys,
 	awful.key({ MODKEY,           }, "Return", function () awful.util.spawn(APPLICATIONS.terminal) end),
 	awful.key({ MODKEY, "Shift"   }, "Return", function () awful.util.spawn(APPLICATIONS.veditor) end),
 	awful.key({ MODKEY, "Control" }, "Return", function () awful.util.spawn(APPLICATIONS.webbrowser) end),
-  awful.key({ MODKEY, "Mod1"     }, "Return", function () awful.util.spawn(APPLICATIONS.filebrowser) end),
+	awful.key({ MODKEY, "Mod1"    }, "Return", function () awful.util.spawn(APPLICATIONS.filebrowser) end),
 	-- ================ --
 
-	awful.key({ MODKEY,           }, "Left",   awful.tag.viewprev       ),
-	awful.key({ MODKEY,           }, "Right",  awful.tag.viewnext       ),
+	awful.key({ MODKEY,           }, "Left",   awful.tag.viewprev  ),
+	awful.key({ MODKEY,           }, "a",      awful.tag.viewprev  ),
+	awful.key({ MODKEY,           }, ",",      awful.tag.viewprev  ),
+
+	
+	awful.key({ MODKEY,           }, "Right",  awful.tag.viewnext  ),
+	awful.key({ MODKEY,           }, "d",      awful.tag.viewnext  ),
+	awful.key({ MODKEY,           }, ".",      awful.tag.viewnext  ),
+
 	awful.key({ MODKEY,           }, "Escape", awful.tag.history.restore),
+	awful.key({ MODKEY,           }, "s",      awful.tag.history.restore),
 
 	awful.key({ MODKEY,           }, "j",
 		function ()
@@ -93,10 +101,10 @@ globalkeys = awful.util.table.join(globalkeys,
 	awful.key({ MODKEY,           }, "space", function () awful.layout.inc(LAYOUTS,  1) end),
 	awful.key({ MODKEY, "Shift"   }, "space", function () awful.layout.inc(LAYOUTS, -1) end),
 
-	awful.key({ MODKEY, "Control" }, "n", awful.client.restore),
+	awful.key({ MODKEY, "Control" }, "n", awful.client.restore)
 
 	-- Menubar
-	awful.key({ MODKEY }, "p", function()  menubar.show()  end)
+	--awful.key({ MODKEY }, "p", function()  menubar.show()  end)
 )
 
 return globalkeys

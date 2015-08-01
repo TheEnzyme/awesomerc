@@ -67,7 +67,7 @@ end
 
 -- Setup tags --
 local tags = {}
-names = { "COMMS", "WEB", "AUX", "DEV",  "WORK", "ETC" }
+names = { "TERM", "COMMS", "WEB", "AUX", "DEV",  "WORK" }
 for s = 1, screen.count() do
 	tags[s] = {}
 	for n = 1, NTAGS do

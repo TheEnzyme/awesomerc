@@ -9,15 +9,6 @@ local wibox_main = {}
 local awesomeicon = wibox.widget.imagebox(beautiful.awesome_icon)
 
 -- Define all the widgets
-local cpumeter = wibox.widget.textbox()
-vicious.register(cpumeter, vicious.widgets.cpu, "| CPU: $1% ", 7)
-
-local rammeter = wibox.widget.textbox()
-vicious.register(rammeter, vicious.widgets.mem, "| RAM: $1% ", 13)
-
-local wifimeter = wibox.widget.textbox()
-vicious.register(wifimeter, vicious.widgets.wifi, "SSID: ${ssid} | WIFI: ${linp}% ", 11, "wlan0")
-
 local powermeter = wibox.widget.textbox() 
 vicious.register(powermeter, vicious.widgets.bat, "| BAT: $2%$1 ", 43, "BAT0")
 
@@ -42,7 +33,7 @@ taglist.buttons = awful.util.table.join(
 
 	-- Mod + right click -> toggle whether current client has this tag.
 	awful.button({ MODKEY }, 3, awful.client.toggletag)
-
+	
 )
 
 local tasklist = {}
@@ -51,6 +42,9 @@ local layoutbox = {}
 
 local padding = wibox.widget.textbox()
 padding:set_text(" ")
+
+local seperator= wibox.widget.textbox()
+seperator:set_text (" | ")
 
 -- Adding the widgets.
 for s=1, screen.count() do
@@ -75,22 +69,18 @@ for s=1, screen.count() do
 	-- Widgets aligned to the left of the wibox.
 	local left_layout = wibox.layout.fixed.horizontal()
 	left_layout:add(taglist[s])
-  left_layout:add(padding)
+ 	left_layout:add(padding)
 	left_layout:add(promptbox[s])
-  left_layout:add(padding)
 
 	-- Widgets aligned to the right.
 	local right_layout = wibox.layout.fixed.horizontal()
-    right_layout:add(wifimeter)
-  right_layout:add(cpumeter)
-  right_layout:add(rammeter)
-  right_layout:add(volumemeter)
-  right_layout:add(powermeter)
+ 	right_layout:add(volumemeter)
+ 	right_layout:add(powermeter)
 	right_layout:add(textclock)
-  if s == 1 then
+	if s == 1 then
 		right_layout:add(wibox.widget.systray()) -- Add systray only to screen 1.
 	end
-  right_layout:add(padding)
+	right_layout:add(padding)
 	right_layout:add(layoutbox[s])
 	
 
