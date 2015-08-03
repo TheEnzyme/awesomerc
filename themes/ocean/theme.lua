@@ -1,5 +1,5 @@
 local awful = require("awful")
-local themedir = awful.util.getdir("config") .. "/themes"
+local themedir = awful.util.getdir("config") .. "/themes/ocean"
 
 return {
 
@@ -11,26 +11,23 @@ return {
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#c0c5ce",
-	fg_focus      = "#c0c5ce",
+	fg_focus      = "#c0c5ce",  
 	fg_urgent     = "#c0c5ce",
 	fg_minimize   = "#ffffff",
 
-	border_width  = 2,
+	border_width  = 1,
 	border_normal = "#65737e",
 	border_focus  = "#8fa1b3",
 	border_marked = "#2b303b",
 
-	tasklist_bg_normal = bg_normal,
-	tasklist_bg_focus  = "#2b303b",
-
-	tasklist_fg_normal = fg_normal,
-	tasklist_fg_focus  = fg_normal,
+	tasklist_bg_focus = "2b303b",
+	tasklist_fg_focus = fg_normal,
 
 	menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png",
 	menu_height = 15,
 	menu_width  = 100,
 
-	wallpaper = themedir .. "/background/dresden_minimal.png",
+	wallpaper = themedir .. "/background.png",
 
 	layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png",
 	layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png",
