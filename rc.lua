@@ -1,7 +1,3 @@
---[[
-	TODO:
-		Use a music visualisation program as the wallpaper.
-]]
 
 local awful = require("awful")
 require("awful.autofocus")
