@@ -10,6 +10,8 @@ local gears = require("gears")
 
 local menubar = require("menubar")
 
+local lain = require("lain")
+
 ---
 
 local CONFIG_DIR = awful.util.getdir("config")
@@ -23,7 +25,6 @@ local MOD
 --======== OPTIONS ========--
 local OPTIONS = {
 	modkey = "Mod4",
-
 	theme = "ocean",
 
 	---
@@ -38,16 +39,15 @@ local OPTIONS = {
 
 	---
 
-	ntags = 6,
+	ntags = 4,
 
 	layouts = {
 		awful.layout.suit.floating,
-		awful.layout.suit.fair,
-		awful.layout.suit.fair.horizontal,
-		awful.layout.suit.tile,
-		awful.layout.suit.tile.left
+		lain.layout.centerwork,
+		lain.layout.uselessfair,
+		lain.layout.uselesstile,
 	},
-	default_layout = awful.layout.suit.tile
+	default_layout = lain.layout.uselesstile
 }
 
 OPTIONS.keys = awful.util.table.join(
@@ -79,6 +79,13 @@ OPTIONS.keys = awful.util.table.join(
 	awful.key({OPTIONS.modkey, }, "d", awful.tag.viewnext         ),
 	awful.key({OPTIONS.modkey, }, ".", awful.tag.viewnext         ),
 
+	---
+
+	awful.key({ OPTIONS.modkey, }, "=", function () lain.util.useless_gaps_resize(1) end),
+	awful.key({ OPTIONS.modkey, }, "-", function () lain.util.useless_gaps_resize(-1) end),
+
+	awful.key({ OPTIONS.modkey, "Shift" }, "a", function () lain.util.move_tag(-1) end),
+	awful.key({ OPTIONS.modkey, "Shift" }, "d", function () lain.util.move_tag(1) end),
 	---
 
 	awful.key({OPTIONS.modkey, }, "q",
@@ -203,7 +210,7 @@ end
 --- Add tags
 local tags = {}
 
-names = { "TERM", "COMMS", "WEB", "AUX", "DEV", "WORK" }
+names = { "TERM", "COMMS", "WEB", "AUX" }
 
 for s = 1, screen.count() do
 	tags[s] = {}

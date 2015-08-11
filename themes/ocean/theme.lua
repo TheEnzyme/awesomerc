@@ -27,6 +27,8 @@ return {
 	menu_height = 15,
 	menu_width  = 100,
 
+	useless_gap_width = 10,
+
 	wallpaper = themedir .. "/background.png",
 
 	layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png",
@@ -41,6 +43,10 @@ return {
 	layout_tiletop = "/usr/share/awesome/themes/default/layouts/tiletopw.png",
 	layout_spiral  = "/usr/share/awesome/themes/default/layouts/spiralw.png",
 	layout_dwindle = "/usr/share/awesome/themes/default/layouts/dwindlew.png",
+
+	layout_uselessfair = "/usr/share/awesome/themes/default/layouts/fairvw.png",
+	layout_uselesstile = "/usr/share/awesome/themes/default/layouts/tilew.png",
+	layout_centerwork = themedir .. "/icons/centerworkw.png",
 
 	awesome_icon = themedir .. "/icons/awesome16.png",
 
