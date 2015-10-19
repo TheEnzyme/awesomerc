@@ -3,33 +3,34 @@ local themedir = awful.util.getdir("config") .. "/themes/ocean"
 
 return {
 
-	font          = "DejaVu Sans 10",
+	font          = "Roboto Regular 10",
 	bg_normal     = "#2b303b",
-	bg_focus      = "#65737e", 
-	bg_urgent     = "#bf616a",
+	bg_focus      = "#2b303b", 
+	bg_urgent     = "#2b303b",
 	bg_minimise   = bg_normal,
 	bg_systray    = bg_normal,
 
 	fg_normal     = "#c0c5ce",
-	fg_focus      = "#c0c5ce",  
-	fg_urgent     = "#c0c5ce",
+	fg_focus      = "#b48ead",  
+	fg_urgent     = "#bf616a",
 	fg_minimize   = "#ffffff",
 
-	border_width  = 1,
+	border_width  = 6,
 	border_normal = "#65737e",
-	border_focus  = "#8fa1b3",
-	border_marked = "#2b303b",
+	border_focus  = "#c0c5ce",
+	border_marked = border_normal,
 
-	tasklist_bg_focus = "2b303b",
-	tasklist_fg_focus = fg_normal,
+	tasklist_bg_focus = "#2b303b",
+	tasklist_fg_focus = "#c0c5ce",
 
 	menu_submenu_icon = "/usr/share/awesome/themes/default/submenu.png",
 	menu_height = 15,
 	menu_width  = 100,
 
-	useless_gap_width = 10,
+	useless_gap_width = 15,
 
-	wallpaper = themedir .. "/background.png",
+	--wallpaper = themedir .. "/background.png",
+	wallpaper = themedir .. "/background2.jpg",
 
 	layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png",
 	layout_fairv = "/usr/share/awesome/themes/default/layouts/fairvw.png",

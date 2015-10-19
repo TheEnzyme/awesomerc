@@ -32,14 +32,13 @@ local OPTIONS = {
 	applications = {
 		terminal = "termite -e fish",
 		editor = os.getenv("EDITOR"),
-		veditor = "textadept",
 		filemanager = "thunar",
 		www = "firefox"
 	},
 
 	---
 
-	ntags = 4,
+	ntags = 5,
 
 	layouts = {
 		awful.layout.suit.floating,
@@ -210,7 +209,7 @@ end
 --- Add tags
 local tags = {}
 
-names = { "TERM", "COMMS", "WEB", "AUX" }
+names = { "TERM", "COMMS", "WEB", "AUX", "ETC" }
 
 for s = 1, screen.count() do
 	tags[s] = {}
@@ -255,10 +254,16 @@ MOD.add_client_rules(
 	},
 
 	{ rule = { class = "Skype" },
-		properties = { tag = tags[2] } },
+		properties = { tag = tags[1][2] } },
 	
 	{ rule = { class = "Firefox" },
-		properties = { tag = tags[3] } },
+		properties = { tag = tags[1][3] } },
+
+	{ rule = { class = "conky" },
+		properties = { focusable = false } },
+	
+	{ rule = { class = "Termite" },
+		properties = { opacity = 0.95 } },
 
 	OPTIONS.client_rules
 )
@@ -324,3 +329,4 @@ end
 run_once("skype")
 run_once("termite -e \"tmux -2 a -t comms\"")
 run_once("firefox")
+awful.util.spawn_with_shell("compton -b")
